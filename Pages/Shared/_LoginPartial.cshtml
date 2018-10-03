@@ -6,12 +6,12 @@
 @if (SignInManager.IsSignedIn(User))
 {
     <form asp-area="User" asp-page="/WeightLog/Create" asp-route-returnUrl="@Url.Page("/Index", new { area = "" })" method="post" id="userFeatures" class="navbar-left">
-        <ul class="nav navbar-nav navbar-right">
+        <ul class="nav navbar-nav navbar-left">
             <li>
-                <a asp-area="User" asp-page="/Profile/Index" title="Manage">My Profile</a>
+                <a asp-area="User" asp-page="/WeightLog/Create" title="CreateWeightLog">Weight Logs</a>
             </li>
             <li>
-                <button type="submit" class="btn btn-link navbar-btn navbar-link">Log out</button>
+                <a asp-area="User" asp-page="/Table/Index" title="Table">Table</a>
             </li>
         </ul>
     </form>

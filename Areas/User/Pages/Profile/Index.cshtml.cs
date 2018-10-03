@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace FC_MVVC.Areas.User.Pages
+namespace FC_MVVC.Areas.User.Pages.Profile
 {
     public class ProfileModel : PageModel
     {

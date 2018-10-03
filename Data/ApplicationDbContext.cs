@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using FC_MVVC.Models;
+using FC_MVVC.Data.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,6 +13,8 @@ namespace FC_MVVC.Data
             : base(options)
         {
         }
+
+        public DbSet<WeightLog> WeightLogs { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

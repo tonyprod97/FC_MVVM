@@ -24,17 +24,12 @@ using FC_MVVC;
 #line default
 #line hidden
 #line 3 "C:\Users\Korisnik\Desktop\Visual Studio\FC_MVVC\FC_MVVC\Pages\_ViewImports.cshtml"
-using FC_MVVC.Data;
-
-#line default
-#line hidden
-#line 4 "C:\Users\Korisnik\Desktop\Visual Studio\FC_MVVC\FC_MVVC\Pages\_ViewImports.cshtml"
-using FC_MVVC.Models;
+using FC_MVVC.Data.Models;
 
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"9512ced730a65366533ec9853569bfdf287dff3b", @"/Pages/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6e7fa1511b7cc24bb863cd53b0bb3ab8e8f4fd27", @"/Pages/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ce217b72f63289efc2fb02c40dca6ca3249f2e74", @"/Pages/_ViewImports.cshtml")]
     public class Pages_Index : global::Microsoft.AspNetCore.Mvc.RazorPages.Page
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "WeightLog", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -74,7 +69,7 @@ using FC_MVVC.Models;
             WriteLiteral("\r\n\r\n<h2>Welcome to Fitness Community</h2>\r\n<div class=\"jumbotron\">\r\n    <h4>");
             EndContext();
             BeginContext(147, 67, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a4c85ee1a9694d5ab7ade9c64e6799f5", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8661585e9a814714b8e1766a8f4eed2c", async() => {
                 BeginContext(206, 4, true);
                 WriteLiteral("Here");
                 EndContext();
@@ -98,7 +93,7 @@ using FC_MVVC.Models;
             WriteLiteral(" you can start logging your daily weight.</h4><br />\r\n    <h4>\r\n        If you have already logged your weight in past you can see them in ");
             EndContext();
             BeginContext(353, 61, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8f683fb7f7e64e9d94f179d07aefddfa", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "15616bd991d0458aabb9ac5ac2121e04", async() => {
                 BeginContext(398, 12, true);
                 WriteLiteral("Table format");
                 EndContext();
@@ -122,7 +117,7 @@ using FC_MVVC.Models;
             WriteLiteral("\r\n        or visualise them on ");
             EndContext();
             BeginContext(445, 54, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9c4d454ec44e434d91e01abde9581107", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b448365a8bbb4f13942d0b2973013432", async() => {
                 BeginContext(490, 5, true);
                 WriteLiteral("Chart");
                 EndContext();

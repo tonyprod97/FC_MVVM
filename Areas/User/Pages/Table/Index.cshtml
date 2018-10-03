@@ -1,0 +1,53 @@
+﻿@page
+
+@model FC_MVVC.Areas.User.Pages.Table.IndexModel
+@{
+}
+
+<div style="width:60%;margin-top:20px">
+
+    <table class="table table-striped table-hover table-responsive" id="weightLogsTable">
+        <thead>
+            <tr class="text-uppercase" id="tableHeader">
+                <th>
+                    Date
+                    <span class="glyphicon glyphicon-sort-by-attributes"></span>
+                </th>
+                <th>
+                    Weight:
+                    <span class="glyphicon glyphicon-sort-by-order"></span>
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @{
+                foreach (var log in Model.WeightLogs)
+                {
+                    <tr>
+                        <td>
+                            @log.LogDate.ToShortDateString()
+                        </td>
+                        <td>
+                            <label style="width:35px"> @log.WeightValue</label>
+                            <a asp-page="./WeightLog/Edit" asp-page-handler="Delete" value="@log.Id"
+                               class="btn btn-info btn-xs">Delete</a>                               
+                            <a asp-page="/Index" class="btn btn-primary btn-xs">Edit</a>
+                            <a asp-area="User" asp-page="/Profile/Index" title="Manage">My Profile</a>
+
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+
+@section Scripts
+    {
+    <script>
+        $(document).ready(function () {
+            var table = $('#weightLogsTable').DataTable();
+        });
+    </script>
+}

@@ -3,7 +3,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace FC_MVVC.Models
+namespace FC_MVVC.Data.Models
 {
     public class WeightLog
     {

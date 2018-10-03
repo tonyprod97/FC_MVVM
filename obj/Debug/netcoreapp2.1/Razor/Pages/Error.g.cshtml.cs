@@ -24,17 +24,12 @@ using FC_MVVC;
 #line default
 #line hidden
 #line 3 "C:\Users\Korisnik\Desktop\Visual Studio\FC_MVVC\FC_MVVC\Pages\_ViewImports.cshtml"
-using FC_MVVC.Data;
-
-#line default
-#line hidden
-#line 4 "C:\Users\Korisnik\Desktop\Visual Studio\FC_MVVC\FC_MVVC\Pages\_ViewImports.cshtml"
-using FC_MVVC.Models;
+using FC_MVVC.Data.Models;
 
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f6ebae86d40004d00768c35aea29f9fd0820dc4a", @"/Pages/Error.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6e7fa1511b7cc24bb863cd53b0bb3ab8e8f4fd27", @"/Pages/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ce217b72f63289efc2fb02c40dca6ca3249f2e74", @"/Pages/_ViewImports.cshtml")]
     public class Pages_Error : global::Microsoft.AspNetCore.Mvc.RazorPages.Page
     {
         #pragma warning disable 1998

@@ -12,7 +12,9 @@ using Microsoft.EntityFrameworkCore;
 using FC_MVVC.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using FC_MVVC.Models;
+using FC_MVVC.Services;
+using AutoMapper;
+using FC_MVVC.Data.Models;
 
 namespace FC_MVVC
 {
@@ -42,7 +44,10 @@ namespace FC_MVVC
             services.AddIdentity<ApplicationUser, IdentityRole>()
                     .AddEntityFrameworkStores<ApplicationDbContext>()
                     .AddDefaultTokenProviders();
+            services.AddAutoMapper();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddTransient<IApplicationUserService, ApplicationUserService>();
+            services.AddTransient<IWeigtLogService, WeigtLogService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

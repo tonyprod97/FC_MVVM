@@ -9,7 +9,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
-using FC_MVVC.Models;
+using FC_MVVC.Data;
+using FC_MVVC.Data.Models;
 
 namespace FC_MVVC.Areas.Identity.Pages.Account
 {
