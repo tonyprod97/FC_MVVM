@@ -69,7 +69,7 @@ using FC_MVVC.Data.Models;
             WriteLiteral("\r\n\r\n<h2>Welcome to Fitness Community</h2>\r\n<div class=\"jumbotron\">\r\n    <h4>");
             EndContext();
             BeginContext(147, 67, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8661585e9a814714b8e1766a8f4eed2c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1e7d30e79c9e4ab0b78511c75cc31396", async() => {
                 BeginContext(206, 4, true);
                 WriteLiteral("Here");
                 EndContext();
@@ -93,7 +93,7 @@ using FC_MVVC.Data.Models;
             WriteLiteral(" you can start logging your daily weight.</h4><br />\r\n    <h4>\r\n        If you have already logged your weight in past you can see them in ");
             EndContext();
             BeginContext(353, 61, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "15616bd991d0458aabb9ac5ac2121e04", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7d97aa84c039480f87a726acad84a771", async() => {
                 BeginContext(398, 12, true);
                 WriteLiteral("Table format");
                 EndContext();
@@ -117,7 +117,7 @@ using FC_MVVC.Data.Models;
             WriteLiteral("\r\n        or visualise them on ");
             EndContext();
             BeginContext(445, 54, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b448365a8bbb4f13942d0b2973013432", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ac257318ddb64d87b22a1959713260f6", async() => {
                 BeginContext(490, 5, true);
                 WriteLiteral("Chart");
                 EndContext();

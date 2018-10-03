@@ -1,4 +1,34 @@
 ﻿@page
 @model EditModel
+
 @{
+    ViewData["Title"] = "Edit Weight Log";
+
 }
+
+<h2>@ViewData["Title"]</h2>
+
+
+<div class="row">
+    <div class="col-md-4">
+        <section>
+            <form method="post">
+                <hr />
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Input.LogDate"></label>
+                    <input asp-for="Input.LogDate" class="form-control" />
+                    <span asp-validation-for="Input.LogDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Input.WeightValue">Weight in @Model.MeasureType</label>
+                    <input asp-for="Input.WeightValue" class="form-control" />
+                    <span asp-validation-for="Input.WeightValue" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-default">Update</button>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>

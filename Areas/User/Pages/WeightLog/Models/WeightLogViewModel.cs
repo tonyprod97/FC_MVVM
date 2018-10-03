@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 
 
-namespace FC_MVVC.Areas.User.Models
+namespace FC_MVVC.Areas.User.Pages.WeightLog.Models
 {
     public class WeightLogViewModel
     {

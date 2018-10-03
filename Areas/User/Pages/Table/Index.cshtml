@@ -30,11 +30,8 @@
                         </td>
                         <td>
                             <label style="width:35px"> @log.WeightValue</label>
-                            <a asp-page="./WeightLog/Edit" asp-page-handler="Delete" value="@log.Id"
-                               class="btn btn-info btn-xs">Delete</a>                               
-                            <a asp-page="/Index" class="btn btn-primary btn-xs">Edit</a>
-                            <a asp-area="User" asp-page="/Profile/Index" title="Manage">My Profile</a>
-
+                            <a asp-page="/WeightLog/Edit" asp-page-handler="Delete" asp-route-id="@log.Id" class="btn btn-info btn-xs">Delete</a>                               
+                            <a asp-page="/WeightLog/Edit" asp-route-id="@log.Id" class="btn btn-primary btn-xs">Edit</a>
                         </td>
                     </tr>
                 }

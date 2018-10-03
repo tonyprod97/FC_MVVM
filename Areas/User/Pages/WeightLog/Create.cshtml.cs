@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
-using FC_MVVC.Areas.User.Models;
+using FC_MVVC.Areas.User.Pages.WeightLog.Models;
 using FC_MVVC.Data;
 using FC_MVVC.Data.Models;
 using FC_MVVC.Enums;

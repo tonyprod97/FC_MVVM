@@ -35,14 +35,5 @@ namespace FC_MVVC.Areas.User.Pages.Table
             WeightLogs = await _weigtLogManageService.GetAllWeightLogs(user);
             return Page();
         }
-
-        
-        public async Task<IActionResult> OnGetDeleteAsync(Guid id)
-        {
-            var log = await _weigtLogManageService.FindWeightLogById(id);
-            WeightLogs.ToList().Remove(log);
-            await _weigtLogManageService.Remove(log);
-            return Page();
-        }
     }
 }
