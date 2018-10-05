@@ -27,7 +27,7 @@ namespace FC_MVVC.Areas.User.Pages.WeightLog
         [BindProperty]
         public WeightLogViewModel Input { get; set; }
 
-        public CreateModel(IApplicationUserService applicationUserService,IWeigtLogService weigtLogService ,IMapper mapper)
+        public CreateModel(ApplicationUserService applicationUserService,WeigtLogService weigtLogService ,IMapper mapper)
         {
             _applicationUserService = applicationUserService;
             _mapper = mapper;
@@ -50,8 +50,11 @@ namespace FC_MVVC.Areas.User.Pages.WeightLog
                 var newLog = _mapper.Map<FC_MVVC.Data.Models.WeightLog>(Input);
 
                 ApplicationUser user = await GetUser();
+                if (user.MeasureType == MeasureType.lbs)
+                    newLog = WeightConverter.ConvertToKg(newLog);
 
                 newLog.User = user;
+
                 await _weigtLogService.Add(newLog);
 
                 return RedirectToPage("/Table/Index");

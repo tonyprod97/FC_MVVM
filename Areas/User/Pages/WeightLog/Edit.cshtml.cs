@@ -25,7 +25,7 @@ namespace FC_MVVC.Areas.User.Pages.WeightLog
         [BindProperty]
         public WeightLogViewModel Input { get; set; }
 
-        public EditModel(IApplicationUserService applicationUserService, IWeigtLogService weigtLogService, IMapper mapper)
+        public EditModel(ApplicationUserService applicationUserService, WeigtLogService weigtLogService, IMapper mapper)
         {
             _applicationUserService = applicationUserService;
             _mapper = mapper;
@@ -36,6 +36,10 @@ namespace FC_MVVC.Areas.User.Pages.WeightLog
         {
             var log = await _weigtLogService.FindWeightLogById(id);
             Input = _mapper.Map<WeightLogViewModel>(log);
+            var user = await GetUser();
+
+            if (user.MeasureType == MeasureType.lbs)
+                log = WeightConverter.ConvertToLbs(log);
 
             return Page();
         }
@@ -46,9 +50,13 @@ namespace FC_MVVC.Areas.User.Pages.WeightLog
             {
                 var newLog = _mapper.Map<FC_MVVC.Data.Models.WeightLog>(Input);
 
-                ApplicationUser user = await _applicationUserService.GetUserByName(User.Identity.Name);
+                ApplicationUser user = await GetUser();
+
+                if (user.MeasureType == MeasureType.lbs)
+                    newLog = WeightConverter.ConvertToKg(newLog);
 
                 newLog.User = user;
+
                 await _weigtLogService.Add(newLog);
 
                 return RedirectToPage("/Table/Index");
@@ -63,6 +71,11 @@ namespace FC_MVVC.Areas.User.Pages.WeightLog
             await _weigtLogService.Remove(log);
 
             return RedirectToPage("/Table/Index");
+        }
+
+        private async Task<ApplicationUser> GetUser()
+        {
+            return await _applicationUserService.GetUserByName(User.Identity.Name);
         }
     }
 }

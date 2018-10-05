@@ -13,6 +13,9 @@
             <li>
                 <a asp-area="User" asp-page="/Table/Index" title="Table">Table</a>
             </li>
+            <li>
+                <a asp-area="User" asp-page="/Chart/Index" title="Chart">Chart</a>
+            </li>
         </ul>
     </form>
     <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/Index", new { area = "" })" method="post" id="logoutForm" class="navbar-right">

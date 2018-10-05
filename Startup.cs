@@ -49,8 +49,8 @@ namespace FC_MVVC
 
             services.AddAutoMapper();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddTransient<IApplicationUserService, ApplicationUserService>();
-            services.AddTransient<IWeigtLogService, WeigtLogService>();
+            services.AddTransient<ApplicationUserService>();
+            services.AddTransient<WeigtLogService>();
             services.AddSingleton<IEmailSender, EmailSender>();
             services.Configure<EmailSettings>(Configuration.GetSection("EmailSettings"));
         }

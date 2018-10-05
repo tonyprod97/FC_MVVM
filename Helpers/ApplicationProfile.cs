@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using FC_MVVC.Areas.User.Pages.Profile;
 using FC_MVVC.Areas.User.Pages.WeightLog;
 using FC_MVVC.Areas.User.Pages.WeightLog.Models;
 using FC_MVVC.Data;
@@ -11,7 +12,9 @@ namespace FC_MVVC.Helpers
         public ApplicationProfile()
         {
             CreateMap<WeightLogViewModel, WeightLog>();
-            CreateMap< WeightLog, WeightLogViewModel>();
+            CreateMap<WeightLog, WeightLogViewModel>();
+            CreateMap<ApplicationUser, ProfileViewModel>();
+            CreateMap<ProfileViewModel, ApplicationUser>();
         }
     }
 }

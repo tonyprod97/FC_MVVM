@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
+using FC_MVVC.Areas.User.Pages.Profile;
 using FC_MVVC.Data;
 using FC_MVVC.Data.Models;
-//using FC_MVVC.Models.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
@@ -13,7 +13,7 @@ namespace FC_MVVC.Services
     public interface IApplicationUserService
     {
         Task<ApplicationUser> GetUserByName(string userName);
-        //Task UpdateUserProfile(ProfileViewModel profileViewModel,string email);
+        Task UpdateUserProfile(ProfileViewModel profileViewModel,string email);
 
         Task<String> GetUserEmail(string userName);
     }
@@ -46,14 +46,14 @@ namespace FC_MVVC.Services
             return  user.Email;
         }
 
-        /*public Task UpdateUserProfile(ProfileViewModel profileViewModel,string email)
+        public Task UpdateUserProfile(ProfileViewModel profileViewModel,string email)
         {
-            ApplicationUser applicationUser =  _conetxt.Users.First(user => user.Email == email);
+            ApplicationUser applicationUser =  _conetxt.Users.First(user => user.Email == email) as ApplicationUser;
             _mapper.Map(profileViewModel,applicationUser);
             _conetxt.Users.Update(applicationUser);
 
             return _conetxt.SaveChangesAsync();
 
-        }*/
+        }
     }
 }

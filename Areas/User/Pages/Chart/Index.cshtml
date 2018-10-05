@@ -1,0 +1,75 @@
+﻿@page
+@model FC_MVVC.Areas.User.Pages.Chart.IndexModel
+@{
+    ViewBag.Data = Json.Serialize(Model.WeightLogs);
+}
+<div class="row">
+    <form asp-action="Index" method="post">
+        <div class="col-sm-4">
+            <label asp-for="Input.StartingDate"></label>
+            <input asp-for="Input.StartingDate" />
+            <span asp-validation-for="Input.StartingDate"></span>
+            <button class="btn btn-default btn-sm" type="submit">Apply</button>
+        </div>
+        <div class="col-sm-4">
+            <label asp-for="Input.NumberOfLogs"></label>
+            <input asp-for="Input.NumberOfLogs" type="number" min="0" />
+            <span asp-validation-for="Input.NumberOfLogs"></span>
+            <button class="btn btn-default btn-sm" type="submit">Apply</button>
+        </div>
+    </form>
+</div>
+<h5> You can download your current graph by clicking on menu in top right corner of chart picture.</h5>
+<div id="chartPictureContainer">
+    <div id="chartContainer"></div>
+</div>
+@section Scripts
+    {
+
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+
+    <script>
+        var data = [];
+        var serverData = @ViewBag.Data;
+
+        for (var index = 0; index < serverData.length; index++) {
+            data[index] = {
+                x: new Date(serverData[index].logDate),
+                y: serverData[index].weightValue
+            }
+
+        }
+
+        $(document).ready(function () {
+            var options = {
+                title: {
+                    text: "@Model.Title"
+                },
+                animationEnabled: true,
+                exportEnabled: true,
+                axisY: {
+                    title: "Weight @Model.MeasureType",
+                    includeZero: false
+                },
+                axisX: {
+                    title: "Date"
+                },
+                data: [
+                    {
+                        type: "spline",
+                        dataPoints: data
+                    }
+                ]
+            };
+            $("#chartContainer").CanvasJSChart(options);
+
+        });
+    </script>
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.canvasjs.min.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+        <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+    </environment>
+}

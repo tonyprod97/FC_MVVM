@@ -38,17 +38,31 @@ namespace FC_MVVC.Areas.Identity.Pages.Account
         {
             if (ModelState.IsValid)
             {
+                var code = "";
+                var callbackUrl = "";
+
                 var user = await _userManager.FindByEmailAsync(Input.Email);
                 if (user == null )
                 {
-                    
+                    callbackUrl = Url.Page(
+                    "/Account/Register",
+                    pageHandler: null,
+                    values: new {  },
+                    protocol: Request.Scheme);
+
+                    await _emailSender.SendEmailAsync(
+                    Input.Email,
+                    "Unknown User Password",
+                    $"You are unknown to us please make sure that you have rregistered. You can regiter " +
+                    $"here: href={HtmlEncoder.Default.Encode(callbackUrl)}");
+
                     return RedirectToPage("./Register");
                 }
 
                 // For more information on how to enable account confirmation and password reset please 
                 // visit https://go.microsoft.com/fwlink/?LinkID=532713
-                var code = await _userManager.GeneratePasswordResetTokenAsync(user);
-                var callbackUrl = Url.Page(
+                code = await _userManager.GeneratePasswordResetTokenAsync(user);
+                callbackUrl = Url.Page(
                     "/Account/ResetPassword",
                     pageHandler: null,
                     values: new { code },
@@ -57,7 +71,7 @@ namespace FC_MVVC.Areas.Identity.Pages.Account
                 await _emailSender.SendEmailAsync(
                     Input.Email,
                     "Reset Password",
-                    $"Please reset your here: href='{HtmlEncoder.Default.Encode(callbackUrl)}");
+                    $"Please reset your here: href={HtmlEncoder.Default.Encode(callbackUrl)}");
 
                 return RedirectToPage("./ForgotPasswordConfirmation");
             }
