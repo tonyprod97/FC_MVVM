@@ -19,8 +19,8 @@ namespace FC_MVVC.Areas.User.Pages.Table
         private readonly IWeigtLogService _weigtLogManageService;
         private readonly IApplicationUserService _applicationUserService;
 
-        public IndexModel(IMapper mapper, WeigtLogService weigtLogManageService,
-                                    ApplicationUserService applicationUserService)
+        public IndexModel(IMapper mapper, IWeigtLogService weigtLogManageService,
+                                    IApplicationUserService applicationUserService)
         {
             _mapper = mapper;
             _weigtLogManageService = weigtLogManageService;

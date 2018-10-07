@@ -25,7 +25,7 @@ namespace FC_MVVC.Areas.User.Pages.WeightLog
         [BindProperty]
         public WeightLogViewModel Input { get; set; }
 
-        public EditModel(ApplicationUserService applicationUserService, WeigtLogService weigtLogService, IMapper mapper)
+        public EditModel(IApplicationUserService applicationUserService, IWeigtLogService weigtLogService, IMapper mapper)
         {
             _applicationUserService = applicationUserService;
             _mapper = mapper;

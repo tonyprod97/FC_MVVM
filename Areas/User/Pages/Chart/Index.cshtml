@@ -3,7 +3,8 @@
 @{
     ViewBag.Data = Json.Serialize(Model.WeightLogs);
 }
-<div class="row">
+<link type="text/css" rel="stylesheet" href="~/css/chart/style.css" />
+<div class="row first-row">
     <form asp-action="Index" method="post">
         <div class="col-sm-4">
             <label asp-for="Input.StartingDate"></label>

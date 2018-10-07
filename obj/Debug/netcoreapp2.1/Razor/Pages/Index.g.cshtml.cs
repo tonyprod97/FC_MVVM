@@ -81,7 +81,7 @@ using FC_MVVC.Data.Models;
             WriteLiteral("        <h4>");
             EndContext();
             BeginContext(250, 56, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b9e378ab985d42549b04a72e9daf5ad1", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0d3cc05b6bdf4eeabc7e2e5e43fbf652", async() => {
                 BeginContext(298, 4, true);
                 WriteLiteral("Here");
                 EndContext();
@@ -108,7 +108,7 @@ using FC_MVVC.Data.Models;
             WriteLiteral("        <h4>\r\n            If you have already logged your weight in past you can see them in ");
             EndContext();
             BeginContext(455, 59, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0d554b4b558241898cec3c9c54ad03fe", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7eeb0f077e3f429f8222b4403043f55d", async() => {
                 BeginContext(498, 12, true);
                 WriteLiteral("Table format");
                 EndContext();
@@ -132,7 +132,7 @@ using FC_MVVC.Data.Models;
             WriteLiteral("\r\n            or visualise them on ");
             EndContext();
             BeginContext(549, 52, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ee610bd05fec4e829d0ebcdb366b3e5f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5cfc1f90e87f4777ab20fdc58b7d9737", async() => {
                 BeginContext(592, 5, true);
                 WriteLiteral("Chart");
                 EndContext();
@@ -156,7 +156,7 @@ using FC_MVVC.Data.Models;
             WriteLiteral(".\r\n        </h4>\r\n        <br />\r\n        <h4>\r\n            If you want to change your profile setting go to ");
             EndContext();
             BeginContext(710, 56, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6c4c5304934147f188ad6b25738e809d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "979620c324584092bb47cd7bb15ba2a8", async() => {
                 BeginContext(755, 7, true);
                 WriteLiteral("Profile");
                 EndContext();
@@ -190,7 +190,7 @@ using FC_MVVC.Data.Models;
             WriteLiteral("        <h4>In order to Use application You have to ");
             EndContext();
             BeginContext(860, 64, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b4578b1f041648bdbd63cdb45365bf84", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8451ad7fd626437d9bb4935c86eb367f", async() => {
                 BeginContext(912, 8, true);
                 WriteLiteral("Register");
                 EndContext();
@@ -214,7 +214,7 @@ using FC_MVVC.Data.Models;
             WriteLiteral(".</h4>\r\n        <h4>If You already have account please ");
             EndContext();
             BeginContext(979, 59, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bf964450b3b54109848ac8f806001763", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3f273d684eef4444bb8b3a2c82efb3dd", async() => {
                 BeginContext(1028, 6, true);
                 WriteLiteral("Log in");
                 EndContext();

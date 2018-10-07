@@ -21,7 +21,7 @@ namespace FC_MVVC.Areas.User.Pages.Chart
         private readonly IApplicationUserService _applicationUserService;
         private readonly IMapper _mapper;
 
-        public IndexModel(WeigtLogService weigtLogService, IApplicationUserService applicationUserService, IMapper mapper)
+        public IndexModel(IWeigtLogService weigtLogService, IApplicationUserService applicationUserService, IMapper mapper)
         {
             _weigtLogService = weigtLogService;
             _applicationUserService = applicationUserService;
@@ -38,11 +38,14 @@ namespace FC_MVVC.Areas.User.Pages.Chart
         public async Task<IActionResult> OnGetAsync()
         {
             IEnumerable<FC_MVVC.Data.Models.WeightLog> weightLogs = await _weigtLogService.GetAllWeightLogs(await _applicationUserService.GetUserByName(User.Identity.Name));
-            IList<WeightLogViewModel> chartData = _mapper.Map<IEnumerable<WeightLogViewModel>>(weightLogs).ToList();
-            WeightLogs = chartData.OrderBy(log => log.LogDate);
             Title = "Data since starting weight";
             ApplicationUser user = await _applicationUserService.GetUserByName(User.Identity.Name);
             MeasureType = user.MeasureType;
+            if (MeasureType == MeasureType.lbs)
+                weightLogs = weightLogs.Select(log => WeightConverter.ConvertToLbs(log));
+
+            IList<WeightLogViewModel> chartData = _mapper.Map<IEnumerable<WeightLogViewModel>>(weightLogs).ToList();
+            WeightLogs = chartData.OrderBy(log => log.LogDate);
 
             return Page();
         }
