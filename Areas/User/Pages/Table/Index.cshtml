@@ -30,7 +30,7 @@
                             @log.LogDate.ToShortDateString()
                         </td>
                         <td class="right-row">
-                            <label> @log.WeightValue</label>
+                            <label> @Decimal.Round((Decimal)log.WeightValue,2)</label>
                             <a asp-page="/WeightLog/Edit" asp-page-handler="Delete" asp-route-id="@log.Id" class="btn btn-info btn-xs">Delete</a>                               
                             <a asp-page="/WeightLog/Edit" asp-route-id="@log.Id" class="btn btn-primary btn-xs">Edit</a>
                         </td>

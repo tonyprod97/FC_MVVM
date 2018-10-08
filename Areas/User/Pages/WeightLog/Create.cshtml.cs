@@ -34,7 +34,7 @@ namespace FC_MVVC.Areas.User.Pages.WeightLog
             _weigtLogService = weigtLogService;
         }
 
-        public async void OnGetAsync()
+        public async Task<IActionResult> OnGetAsync()
         {
             Input = new WeightLogViewModel()
             {
@@ -42,7 +42,11 @@ namespace FC_MVVC.Areas.User.Pages.WeightLog
             };
             ApplicationUser user = await GetUser();
             MeasureType = user.MeasureType;
+
+            return Page();
         }
+
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> OnPostAsync()
         {
             if(ModelState.IsValid)

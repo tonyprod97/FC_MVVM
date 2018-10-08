@@ -35,15 +35,17 @@ namespace FC_MVVC.Areas.User.Pages.WeightLog
         public async Task<IActionResult> OnGet(Guid id)
         {
             var log = await _weigtLogService.FindWeightLogById(id);
-            Input = _mapper.Map<WeightLogViewModel>(log);
             var user = await GetUser();
+            MeasureType = user.MeasureType;
 
             if (user.MeasureType == MeasureType.lbs)
                 log = WeightConverter.ConvertToLbs(log);
+            Input = _mapper.Map<WeightLogViewModel>(log);
 
             return Page();
         }
-
+        
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> OnPost()
         {
             if (ModelState.IsValid)

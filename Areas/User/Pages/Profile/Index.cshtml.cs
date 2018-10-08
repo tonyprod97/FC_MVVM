@@ -16,10 +16,10 @@ namespace FC_MVVC.Areas.User.Pages.Profile
     [Authorize]
     public class ProfileModel : PageModel
     {
-        private readonly ApplicationUserService _applicationUserService;
+        private readonly IApplicationUserService _applicationUserService;
         private readonly IMapper _mapper;
 
-        public ProfileModel(ApplicationUserService applicationUserService, IMapper mapper)
+        public ProfileModel(IApplicationUserService applicationUserService, IMapper mapper)
         {
             _applicationUserService = applicationUserService;
             _mapper = mapper;
@@ -40,6 +40,7 @@ namespace FC_MVVC.Areas.User.Pages.Profile
             return Page();
         }
 
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid) return Page();
@@ -58,6 +59,7 @@ namespace FC_MVVC.Areas.User.Pages.Profile
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
         [Display(Name = "Phone Number")]
+        [Phone]
         public string PhoneNumber { get; set; }
         [Display(Name = "Public Info")]
         public string PublicInfo { get; set; }

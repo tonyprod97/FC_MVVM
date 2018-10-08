@@ -1,4 +1,6 @@
-﻿using FC_MVVC.Data;
+﻿using FC_MVVC.Areas.User.Pages.Chart;
+using FC_MVVC.Areas.User.Pages.Table;
+using FC_MVVC.Data;
 using FC_MVVC.Data.Models;
 using System;
 using System.Collections.Generic;
@@ -16,8 +18,8 @@ namespace FC_MVVC.Services
 
         Task Remove(WeightLog weightLog);
 
-        //Task UpdateWeightLog(TableWeightLogViewModel weightLogViewModel);
-        //Task<IEnumerable<WeightLog>> GetWeightLogsSinceDate(ApplicationUser user, ChartViewModel chartViewModel);
+        Task UpdateWeightLog(WeightLogTableViewModel weightLogViewModel);
+        Task<IEnumerable<WeightLog>> GetWeightLogsSinceDate(ApplicationUser user, ChartViewModel chartViewModel);
     }
     public class WeigtLogService : IWeigtLogService
     {
@@ -62,7 +64,7 @@ namespace FC_MVVC.Services
 
             });
         }
-        /*
+        
         public Task<IEnumerable<WeightLog>> GetWeightLogsSinceDate(ApplicationUser user, ChartViewModel chartViewModel)
         {
             return Task.Run(()=>
@@ -72,7 +74,7 @@ namespace FC_MVVC.Services
                 if (chartViewModel.StartingDate != null)
                 {
                     weightLogs= _context.WeightLogs.Where(wl => wl.User.Id == user.Id)
-                                                        .Where(wl => DateTime.Compare(wl.LogDate, (DateTime)chartViewModel.StartingDate) > 0);
+                                                   .Where(wl => DateTime.Compare(wl.LogDate, (DateTime)chartViewModel.StartingDate) > 0);
                 }
                 if (chartViewModel.NumberOfLogs != null)
                 {
@@ -81,7 +83,7 @@ namespace FC_MVVC.Services
                
                 return weightLogs;
             });
-        }*/
+        }
 
         public Task Remove(WeightLog weightLog)
         {
@@ -89,8 +91,8 @@ namespace FC_MVVC.Services
 
             return _context.SaveChangesAsync();
         }
-        /*
-        public Task UpdateWeightLog(TableWeightLogViewModel weightLogViewModel)
+        
+        public Task UpdateWeightLog(WeightLogTableViewModel weightLogViewModel)
         {
             return Task.Run(()=>
             {
@@ -102,6 +104,6 @@ namespace FC_MVVC.Services
 
                 return _context.SaveChangesAsync();
             });
-        }*/
+        }
     }
 }

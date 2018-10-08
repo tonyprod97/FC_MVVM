@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
@@ -28,20 +29,36 @@ namespace FC_MVVC.Areas.User.Pages.Table
         }
 
         [BindProperty]
-        public IEnumerable<FC_MVVC.Data.Models.WeightLog> WeightLogs { get; private set; }
+        public IEnumerable<WeightLogTableViewModel> WeightLogs { get; private set; }
         [BindProperty]
         public MeasureType MeasureType { get; private set; }
 
         public async Task<IActionResult> OnGetAsync()
         {
             ApplicationUser user = await _applicationUserService.GetUserByName(User.Identity.Name);
-            WeightLogs = await _weigtLogManageService.GetAllWeightLogs(user);
+            var logs = await _weigtLogManageService.GetAllWeightLogs(user);
             MeasureType = user.MeasureType;
 
             if (MeasureType == MeasureType.lbs)
-                WeightLogs = WeightLogs.Select( log => log = WeightConverter.ConvertToLbs(log) );
+                logs = logs.Select( log => log = WeightConverter.ConvertToLbs(log));
+
+            WeightLogs = _mapper.Map<IEnumerable<WeightLogTableViewModel>>(logs);
 
             return Page();
         }
+
+     
+    }
+    public class WeightLogTableViewModel
+    {
+        public Guid Id { get; set; }
+
+        [Required]
+        [DataType(DataType.Date)]
+        public DateTime LogDate { get; set; }
+
+        [Required]
+        [Range(0.0, 1000.0)]
+        public float WeightValue { get; set; }
     }
 }

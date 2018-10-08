@@ -49,6 +49,17 @@ namespace FC_MVVC.Areas.User.Pages.Chart
 
             return Page();
         }
+
+        public async Task<IActionResult> OnPostAsync()
+        {
+            IEnumerable<FC_MVVC.Data.Models.WeightLog> weightLogs = await _weigtLogService.GetWeightLogsSinceDate(await _applicationUserService.GetUserByName(this.User.Identity.Name), Input);
+            IList<WeightLogViewModel> chartData = _mapper.Map<IEnumerable<WeightLogViewModel>>(weightLogs).ToList();
+            WeightLogs = chartData.OrderBy(log => log.LogDate);
+
+            if (Input.StartingDate != null)
+                Title = "Data since: " + Input.StartingDate.Value.ToLocalTime().ToShortDateString();
+            return Page();
+        }
     }
 
     public class ChartViewModel
